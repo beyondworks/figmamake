@@ -16,12 +16,38 @@ export default function ContactSection() {
     alert('문의가 접수되었습니다. 곧 연락드리겠습니다!');
     
     // 폼 초기화
-    setFormData({
-      name: '',
-      email: '',
-      company: '',
-      message: '',
-    });
+  //  setFormData({
+  ////    name: '',
+  //    email: '',
+  //    company: '',
+  //    message: '',
+    const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      if (response.ok) {
+        alert('문의가 접수되었습니다. 곧 연락드리겠습니다!');
+        setFormData({
+          name: '',
+          email: '',
+          company: '',
+          message: '',
+        });
+      } else {
+        alert('오류가 발생했습니다. 다시 시도해주세요.');
+      }
+    } catch (error) {
+      console.error(error);
+      alert('오류가 발생했습니다. 다시 시도해주세요.');
+    }
+  };
+
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
