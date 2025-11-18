@@ -457,7 +457,7 @@ export default function ProjectDetail({
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
               transition={{ type: 'spring', duration: 0.5 }}
-              className="relative w-full max-w-2xl bg-zinc-900 rounded-2xl p-8 md:p-12 border border-white/10"
+              className="relative w-full max-w-2xl bg-zinc-900 rounded-2xl p-8 md:p-12 border border-white/10 project-modal"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close Button */}
