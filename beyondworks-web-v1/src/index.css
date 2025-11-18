@@ -2919,3 +2919,17 @@ html {
   syntax: "*";
   inherits: false
 }
+
+/* 프로젝트 문의 모달 안에 있는 select 전용 스타일 */
+
+/* select 박스 자체 (닫혀 있을 때) */
+.project-modal select {
+  color: #ffffff;          /* 닫혀 있을 때는 흰 글자 */
+  background-color: #111111;  /* 어두운 배경 */
+}
+
+/* 드롭다운이 펼쳐졌을 때 각 옵션 */
+.project-modal select option {
+  color: #000000;          /* 옵션 텍스트는 검정 */
+  background-color: #ffffff; /* 옵션 배경은 흰색 */
+}
